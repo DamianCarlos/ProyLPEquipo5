@@ -1,12 +1,12 @@
 
 
-# inlcude <iostream>
+# include <iostream>
 # include <conio>
 # include <fstream>
 # include <stdio>
 
 
-main
+main()
 {
 
 
