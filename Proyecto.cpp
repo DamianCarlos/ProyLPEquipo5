@@ -4,6 +4,8 @@
 # include <conio>
 # include <fstream>
 # include <stdio>
+# include <time.h>
+
 
   struct nuevoevento
 {
@@ -105,13 +107,22 @@ main()
 
 
    case 2:
-   break;
+
+   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
+                  "Jueves","Viernes","Sabado"};
+   time_t tSac = time(NULL);
+   struct tm* tmP = localtime(&tSac);
+
+   cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
+   cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
+   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
+   cout<< "Dia del año: " << tmP->tm_yday << endl;
+
+
+	break;
 
 
 
-
-   case 3:
-   break;
 
 
  }
