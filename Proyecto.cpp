@@ -104,8 +104,6 @@ main()
    }
    break;
 
-
-
    case 2:
 
    char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
@@ -117,20 +115,8 @@ main()
    cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
    cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
    cout<< "Dia del año: " << tmP->tm_yday << endl;
-   cout<<" ";
-   
-
 	break;
-
-
-
-
-
  }
-
-
-
-
 getch();
 }
 
