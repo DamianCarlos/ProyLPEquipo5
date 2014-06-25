@@ -118,6 +118,7 @@ main()
    cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
    cout<< "Dia del año: " << tmP->tm_yday << endl;
    cout<<" ";
+   
 
 	break;
 
