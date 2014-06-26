@@ -1,5 +1,5 @@
 
-   
+
 # include <iostream>
 # include <conio>
 # include <fstream>
@@ -9,7 +9,7 @@
 
   struct nuevoevento
 {
-   char descripcion[100],horainicio[2],horafin[2],fechafin[2], nombre[30],ianio[4],imes[2],idia[2],fanio[4],fmes[2],fdia[2],horai[2],minui[2],horaf[2],minuf[2];
+   char descripcion[100], nombre[30],ianio[4],imes[2],idia[2],fanio[4],fmes[2],fdia[2],horai[2],minui[2],horaf[2],minuf[2];
 };
 main()
 {
@@ -25,11 +25,12 @@ main()
    case 1:
     {
 
-    ofstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
    miarchivo<<carlos.nombre<<"\n";
+   i=0;
     while ( i==0)
     {
       if (strlen(carlos.nombre)==0)
@@ -49,7 +50,7 @@ main()
  	miarchivo<<carlos.descripcion<<"\n";
 
 
-   cout<<"\n		FECHA DE INICIO: \n\t\t  anio:        ";
+   cout<<"\n		FECHA DE INICIO: \n\t  anio:       ";
 
    gets(carlos.ianio);
    i=0;
@@ -64,13 +65,12 @@ main()
    	else
    	{
    		i=1;
-         endl;
       }
-      }
+    }
    miarchivo<<carlos.ianio<<"\n";
    int anio_inicio;
    anio_inicio = atoi(carlos.ianio);
-   cout<<"\n	 \n\t\t  mes:        ";
+   cout<<"\t  mes:        ";
    gets(carlos.imes);
       i=0;
       while (i==0)
@@ -79,7 +79,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.imes);
-         miarchivo<<carlos.imes<<"\n";
+         miarchivo<<carlos.imes;
    	}
    	else
    	{
@@ -93,7 +93,7 @@ main()
 
 
 
-   cout<<"\n	   \n\t\t  dia:        ";
+   cout<<"\t  dia:        ";
 
    gets(carlos.idia);
    i=0;
@@ -116,34 +116,38 @@ main()
    dia_inicio = atoi(carlos.idia);
 
 
-   cout<<"\n		HORA DE INICIO:            ";
-   gets(carlos.horainicio);
-   miarchivo<<carlos.horainicio<<"\n";
+   cout<<"\n		HORA DE INICIO:  \n\t HORA:          ";
+   gets(carlos.horai);
    i=0;
    while (i==0)
     {
-      if (strlen(carlos.horainicio)==0)
+      if (strlen(carlos.horai)==0)
    	{
     		cout<<" Ingrese el dato porfavor   ";
-          gets(carlos.horainicio);
-         miarchivo<<carlos.horainicio<<"\n";
+          gets(carlos.horai);
+         miarchivo<<carlos.horai<<"\n";
    	}
    	else
    	{
    		i=1;
       }
    }
-   cout<<"\n		FECHA DE FINALIZACION:      ";
-   gets(carlos.fechafin);
-   miarchivo<<carlos.fechafin<<"\n";
+    miarchivo<<carlos.horai<<"\n";
+   int hora_inicio;
+   hora_inicio = atoi(carlos.horai);
+
+
+
+   cout<<"\t MINUTOS:       ";
+   gets(carlos.minui);
    i=0;
    while (i==0)
     {
-      if (strlen(carlos.fechafin)==0)
+      if (strlen(carlos.minui)==0)
    	{
-    		cout<<" Ingrese el dato porfavor";
-         gets(carlos.fechafin);
-         miarchivo<<carlos.fechafin<<"\n";
+    		cout<<" Ingrese el dato porfavor   ";
+          gets(carlos.minui);
+         miarchivo<<carlos.minui<<"\n";
    	}
    	else
    	{
@@ -151,30 +155,134 @@ main()
       }
    }
 
-   cout<<"\n		HORA DE FINALIZACION:     ";
-   gets(carlos.horafin);
-   miarchivo<<carlos.horafin<<"\n";
+
+   miarchivo<<carlos.minui<<"\n";
+   int minu_inicio;
+   minu_inicio = atoi(carlos.minui);
+
+   cout<<"\n		FECHA DE FIN: \n\t  anio:       ";
+
+   gets(carlos.fanio);
    i=0;
    while (i==0)
     {
-      if (strlen(carlos.horafin)==0)
+      if (strlen(carlos.fanio)==0)
    	{
-    		cout<<" Ingrese el dato porfavor";
-         gets(carlos.horafin);
-         miarchivo<<carlos.horafin<<"\n";
+    		cout<<" Ingrese el dato porfavor		";
+         gets(carlos.fanio);
+         miarchivo<<carlos.fanio<<"\n";
    	}
+   	else
+   	{
+   		i=1;
+      }
+    }
+   miarchivo<<carlos.fanio<<"\n";
+   int anio_fin;
+   anio_fin = atoi(carlos.fanio);
+   cout<<"\t  mes:        ";
+   gets(carlos.fmes);
+      i=0;
+      while (i==0)
+    {
+      if (strlen(carlos.fmes)==0)
+   	{
+    		cout<<" Ingrese el dato porfavor		";
+         gets(carlos.fmes);
+         miarchivo<<carlos.fmes;
+   	}
+   	else
+   	{
+   		i=1;
+         endl;
+      }
+      }
+   miarchivo<<carlos.fmes<<"\n";
+   int mes_fin;
+   mes_fin = atoi(carlos.fmes);
 
 
+
+   cout<<"\t  dia:        ";
+
+   gets(carlos.fdia);
+   i=0;
+   while (i==0)
+    {
+      if (strlen(carlos.fdia)==0)
+   	{
+    		cout<<" Ingrese el dato porfavor		";
+         gets(carlos.fdia);
+         miarchivo<<carlos.fdia<<"\n";
+   	}
+   	else
+   	{
+   		i=1;
+         endl;
+      }
+      }
+   miarchivo<<carlos.fdia<<"\n";
+   int dia_fin;
+   dia_fin = atoi(carlos.fdia);
+
+
+   cout<<"\n		HORA DE FIN:  \n\t HORA:          ";
+   gets(carlos.horaf);
+   i=0;
+   while (i==0)
+    {
+      if (strlen(carlos.horaf)==0)
+   	{
+    		cout<<" Ingrese el dato porfavor   ";
+          gets(carlos.horaf);
+         miarchivo<<carlos.horaf<<"\n";
+   	}
    	else
    	{
    		i=1;
       }
    }
+    miarchivo<<carlos.horaf<<"\n";
+   int hora_fin;
+   hora_fin = atoi(carlos.horaf);
+
+
+
+   cout<<"\t MINUTOS:       ";
+   gets(carlos.minuf);
+   i=0;
+   while (i==0)
+    {
+      if (strlen(carlos.minuf)==0)
+   	{
+    		cout<<" Ingrese el dato porfavor   ";
+          gets(carlos.minuf);
+         miarchivo<<carlos.minuf<<"\n";
+   	}
+   	else
+   	{
+   		i=1;
+      }
+   }
+
+
+   miarchivo<<carlos.minuf<<"\n";
+   int minu_fin;
+   minu_fin = atoi(carlos.minuf);
+
 
 
    miarchivo.close();
+   cout<<"\n\n\t Desde\t"<<anio_inicio<<"/"<<mes_inicio<<"/"<<dia_inicio<<"   "<<hora_inicio<<":"<<minu_inicio<<"\t Hasta\t"<<anio_fin<<"/"<<mes_fin<<"/"<<dia_fin<<"   "<<hora_fin<<":"<<minu_fin<<endl;
+   cout<<"\t"<<carlos.nombre<<endl;
+   cout<<"\t"<<carlos.descripcion<<endl<<endl;
+
+
+
+
    break;
    }
+
    case 2:
 
    char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
