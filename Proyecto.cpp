@@ -15,21 +15,26 @@ main()
 {
 
   int x,i;
+ do
+ {
+ clrscr();
  cout<<" \n\t\t\t CALENDARIO DE EVENTOS \n\n";
  cout<<"\n\t\t 1. INGRESAR NUEVO EVENTO\n";
  cout<<"\n\t\t 2. VER MIS EVENTOS PARA HOY\n";
  cout<<"\n\t\t 3. VER MIS EVENTOS PARA TODA LA SEMANA\n";
+ cout<<"\n\t\t 4. SALIR\n";
+ cout<<"\n\n\t\t SELECCIONE LA OPCION A REALIZAR: ";
  cin>>x;
  switch(x)
  {
    case 1:
     {
-
+    clrscr();
     ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
-   miarchivo<<carlos.nombre<<"\n";
+   miarchivo<<carlos.nombre<<"  ";
    i=0;
     while ( i==0)
     {
@@ -47,10 +52,10 @@ main()
    cout<<"\n		DESCRIPCION DEL EVENTO:    ";
 
  	gets(carlos.descripcion);
- 	miarchivo<<carlos.descripcion<<"\n";
+ 	miarchivo<<carlos.descripcion<<"*";
 
 
-   cout<<"\n		FECHA DE INICIO: \n\t  anio:       ";
+   cout<<"\n		FECHA DE INICIO: \n\n\t        anio:     ";
 
    gets(carlos.ianio);
    i=0;
@@ -60,17 +65,17 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.ianio);
-         miarchivo<<carlos.ianio<<"\n";
+         miarchivo<<carlos.ianio<<"  ";
    	}
    	else
    	{
    		i=1;
       }
     }
-   miarchivo<<carlos.ianio<<"\n";
+   miarchivo<<carlos.ianio<<"  ";
    int anio_inicio;
    anio_inicio = atoi(carlos.ianio);
-   cout<<"\t  mes:        ";
+   cout<<"\t        mes:      ";
    gets(carlos.imes);
       i=0;
       while (i==0)
@@ -87,13 +92,13 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.imes<<"\n";
+   miarchivo<<carlos.imes<<"  ";
    int mes_inicio;
    mes_inicio = atoi(carlos.imes);
 
 
 
-   cout<<"\t  dia:        ";
+   cout<<"\t\tdia:      ";
 
    gets(carlos.idia);
    i=0;
@@ -103,7 +108,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.idia);
-         miarchivo<<carlos.idia<<"\n";
+         miarchivo<<carlos.idia<<"  ";
    	}
    	else
    	{
@@ -111,12 +116,12 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.idia<<"\n";
+   miarchivo<<carlos.idia<<"  ";
    int dia_inicio;
    dia_inicio = atoi(carlos.idia);
 
 
-   cout<<"\n		HORA DE INICIO:  \n\t HORA:          ";
+   cout<<"\n		HORA DE INICIO:  \n\n\t\tHORA:       ";
    gets(carlos.horai);
    i=0;
    while (i==0)
@@ -125,20 +130,20 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.horai);
-         miarchivo<<carlos.horai<<"\n";
+         miarchivo<<carlos.horai<<"  ";
    	}
    	else
    	{
    		i=1;
       }
    }
-    miarchivo<<carlos.horai<<"\n";
+    miarchivo<<carlos.horai<<"  ";
    int hora_inicio;
    hora_inicio = atoi(carlos.horai);
 
 
 
-   cout<<"\t MINUTOS:       ";
+   cout<<"\t\tMINUTOS:    ";
    gets(carlos.minui);
    i=0;
    while (i==0)
@@ -147,7 +152,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minui);
-         miarchivo<<carlos.minui<<"\n";
+         miarchivo<<carlos.minui<<"  ";
    	}
    	else
    	{
@@ -156,11 +161,11 @@ main()
    }
 
 
-   miarchivo<<carlos.minui<<"\n";
+   miarchivo<<carlos.minui<<"  ";
    int minu_inicio;
    minu_inicio = atoi(carlos.minui);
 
-   cout<<"\n		FECHA DE FIN: \n\t  anio:       ";
+   cout<<"\n		FECHA DE FIN: \n\n\t\tanio:       ";
 
    gets(carlos.fanio);
    i=0;
@@ -170,17 +175,17 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.fanio);
-         miarchivo<<carlos.fanio<<"\n";
+         miarchivo<<carlos.fanio<<"  ";
    	}
    	else
    	{
    		i=1;
       }
     }
-   miarchivo<<carlos.fanio<<"\n";
+   miarchivo<<carlos.fanio<<"  ";
    int anio_fin;
    anio_fin = atoi(carlos.fanio);
-   cout<<"\t  mes:        ";
+   cout<<"\t\tmes:        ";
    gets(carlos.fmes);
       i=0;
       while (i==0)
@@ -197,7 +202,7 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.fmes<<"\n";
+   miarchivo<<carlos.fmes<<"  ";
    int mes_fin;
    mes_fin = atoi(carlos.fmes);
 
@@ -213,7 +218,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.fdia);
-         miarchivo<<carlos.fdia<<"\n";
+         miarchivo<<carlos.fdia<<"  ";
    	}
    	else
    	{
@@ -221,12 +226,12 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.fdia<<"\n";
+   miarchivo<<carlos.fdia<<"  ";
    int dia_fin;
    dia_fin = atoi(carlos.fdia);
 
 
-   cout<<"\n		HORA DE FIN:  \n\t HORA:          ";
+   cout<<"\n		HORA DE FIN:  \n\tHORA:          ";
    gets(carlos.horaf);
    i=0;
    while (i==0)
@@ -235,14 +240,14 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.horaf);
-         miarchivo<<carlos.horaf<<"\n";
+         miarchivo<<carlos.horaf<<"  ";
    	}
    	else
    	{
    		i=1;
       }
    }
-    miarchivo<<carlos.horaf<<"\n";
+    miarchivo<<carlos.horaf<<"  ";
    int hora_fin;
    hora_fin = atoi(carlos.horaf);
 
@@ -257,7 +262,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minuf);
-         miarchivo<<carlos.minuf<<"\n";
+         miarchivo<<carlos.minuf<<"  ";
    	}
    	else
    	{
@@ -266,7 +271,7 @@ main()
    }
 
 
-   miarchivo<<carlos.minuf<<"\n";
+   miarchivo<<carlos.minuf<<"  ";
    int minu_fin;
    minu_fin = atoi(carlos.minuf);
 
@@ -280,11 +285,6 @@ main()
 
 
 
-   break;
-   }
-
-   case 2:
-
    char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
                   "Jueves","Viernes","Sabado"};
    time_t tSac = time(NULL);
@@ -294,9 +294,31 @@ main()
    cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
    cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
    cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
-   cout<<tmP;
+
+   if(((tmP->tm_hour)>=(hora_inicio))&&((tmP->tm_hour)<=(hora_fin)))
+   {
+   cout<<"SIMON";
+   }
+    char caracter;
+ ifstream archivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
+
+    while(!archivo.eof())
+{
+archivo.get(caracter);
+cout<<caracter ;
+}
+archivo.close();
+getch();
+   }
 	break;
- }
+
+    }
+
+
+
+
+   }while(x!=4);
+
 getch();
 }
 
