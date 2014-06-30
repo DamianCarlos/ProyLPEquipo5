@@ -13,8 +13,12 @@
 };
 main()
 {
+  char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
+                  "Jueves","Viernes","Sabado"};
+   time_t tSac = time(NULL);
+   struct tm* tmP = localtime(&tSac);
+  int x,i,inanio,inmes,india,inhora,inmint,infanio,infmes,infdia,inhoraf,inminuf;
 
-  int x,i;
  do
  {
  clrscr();
@@ -56,8 +60,8 @@ main()
 
 
    cout<<"\n		FECHA DE INICIO: \n\n\t        anio:     ";
-
    gets(carlos.ianio);
+   inanio = atoi(carlos.ianio);
    i=0;
    while (i==0)
     {
@@ -77,6 +81,7 @@ main()
    anio_inicio = atoi(carlos.ianio);
    cout<<"\t        mes:      ";
    gets(carlos.imes);
+   inmes = atoi(carlos.imes);
       i=0;
       while (i==0)
     {
@@ -91,7 +96,7 @@ main()
    		i=1;
          endl;
       }
-      }
+    }
    miarchivo<<carlos.imes<<"*";
    int mes_inicio;
    mes_inicio = atoi(carlos.imes);
@@ -99,8 +104,8 @@ main()
 
 
    cout<<"\t\tdia:      ";
-
    gets(carlos.idia);
+   india = atoi(carlos.idia);
    i=0;
    while (i==0)
     {
@@ -115,7 +120,7 @@ main()
    		i=1;
          endl;
       }
-      }
+    }
    miarchivo<<carlos.idia<<"*";
    int dia_inicio;
    dia_inicio = atoi(carlos.idia);
@@ -123,6 +128,7 @@ main()
 
    cout<<"\n		HORA DE INICIO:  \n\n\t\tHORA:       ";
    gets(carlos.horai);
+   inhora = atoi(carlos.horai);
    i=0;
    while (i==0)
     {
@@ -145,6 +151,7 @@ main()
 
    cout<<"\t\tMINUTOS:    ";
    gets(carlos.minui);
+   inmint = atoi(carlos.minui);
    i=0;
    while (i==0)
     {
@@ -166,8 +173,8 @@ main()
    minu_inicio = atoi(carlos.minui);
 
    cout<<"\n		FECHA DE FIN: \n\n\t\tanio:       ";
-
    gets(carlos.fanio);
+   infanio=atoi(carlos.fanio);
    i=0;
    while (i==0)
     {
@@ -187,6 +194,7 @@ main()
    anio_fin = atoi(carlos.fanio);
    cout<<"\t\tmes:        ";
    gets(carlos.fmes);
+   infmes = atoi(carlos.fmes);
       i=0;
       while (i==0)
     {
@@ -201,7 +209,7 @@ main()
    		i=1;
          endl;
       }
-      }
+    }
    miarchivo<<carlos.fmes<<"*";
    int mes_fin;
    mes_fin = atoi(carlos.fmes);
@@ -209,8 +217,8 @@ main()
 
 
    cout<<"\t  dia:        ";
-
    gets(carlos.fdia);
+   infdia = atoi(carlos.fdia);
    i=0;
    while (i==0)
     {
@@ -225,7 +233,7 @@ main()
    		i=1;
          endl;
       }
-      }
+    }
    miarchivo<<carlos.fdia<<"*";
    int dia_fin;
    dia_fin = atoi(carlos.fdia);
@@ -233,6 +241,7 @@ main()
 
    cout<<"\n		HORA DE FIN:  \n\tHORA:          ";
    gets(carlos.horaf);
+   inhoraf = atoi(carlos.horaf);
    i=0;
    while (i==0)
     {
@@ -255,6 +264,7 @@ main()
 
    cout<<"\t MINUTOS:       ";
    gets(carlos.minuf);
+   inminuf = atoi(carlos.minuf);
    i=0;
    while (i==0)
     {
@@ -285,10 +295,7 @@ main()
 
 
 
-   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
-                  "Jueves","Viernes","Sabado"};
-   time_t tSac = time(NULL);
-   struct tm* tmP = localtime(&tSac);
+
 
 
    cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
@@ -306,22 +313,37 @@ main()
 {
 
 archivo.get(caracter);
-if (caracter=='*')
+/*if (caracter=='*')
 {
+  while(caracter!=' ')
+  {
 
+  }
 
-}
+}*/
 
 
 cout<<caracter ;
 }
 archivo.close();
 getch();
+   break;
    }
-	break;
+   case 2:
+    {
+      if (inanio==tmP->tm_year)
+      {
+       	cout<<"si es igual";
+      }
+      else
+      {
+       	cout<<"no es igual";
+      }
 
+    break;
     }
 
+   }
    }while(x!=4);
 
 getch();
