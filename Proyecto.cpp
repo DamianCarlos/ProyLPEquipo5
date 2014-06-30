@@ -30,11 +30,11 @@ main()
    case 1:
     {
     clrscr();
-    ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
-   miarchivo<<carlos.nombre<<"  ";
+   miarchivo<<"\n"<<carlos.nombre<<" ";
    i=0;
     while ( i==0)
     {
@@ -65,14 +65,14 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.ianio);
-         miarchivo<<carlos.ianio<<"  ";
+         miarchivo<<carlos.ianio<<"*";
    	}
    	else
    	{
    		i=1;
       }
     }
-   miarchivo<<carlos.ianio<<"  ";
+   miarchivo<<carlos.ianio<<"*";
    int anio_inicio;
    anio_inicio = atoi(carlos.ianio);
    cout<<"\t        mes:      ";
@@ -92,7 +92,7 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.imes<<"  ";
+   miarchivo<<carlos.imes<<"*";
    int mes_inicio;
    mes_inicio = atoi(carlos.imes);
 
@@ -108,7 +108,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.idia);
-         miarchivo<<carlos.idia<<"  ";
+         miarchivo<<carlos.idia<<"*";
    	}
    	else
    	{
@@ -116,7 +116,7 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.idia<<"  ";
+   miarchivo<<carlos.idia<<"*";
    int dia_inicio;
    dia_inicio = atoi(carlos.idia);
 
@@ -130,14 +130,14 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.horai);
-         miarchivo<<carlos.horai<<"  ";
+         miarchivo<<carlos.horai<<"*";
    	}
    	else
    	{
    		i=1;
       }
    }
-    miarchivo<<carlos.horai<<"  ";
+    miarchivo<<carlos.horai<<"*";
    int hora_inicio;
    hora_inicio = atoi(carlos.horai);
 
@@ -152,7 +152,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minui);
-         miarchivo<<carlos.minui<<"  ";
+         miarchivo<<carlos.minui<<"*";
    	}
    	else
    	{
@@ -161,7 +161,7 @@ main()
    }
 
 
-   miarchivo<<carlos.minui<<"  ";
+   miarchivo<<carlos.minui<<"*";
    int minu_inicio;
    minu_inicio = atoi(carlos.minui);
 
@@ -175,14 +175,14 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.fanio);
-         miarchivo<<carlos.fanio<<"  ";
+         miarchivo<<carlos.fanio<<"*";
    	}
    	else
    	{
    		i=1;
       }
     }
-   miarchivo<<carlos.fanio<<"  ";
+   miarchivo<<carlos.fanio<<"*";
    int anio_fin;
    anio_fin = atoi(carlos.fanio);
    cout<<"\t\tmes:        ";
@@ -202,7 +202,7 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.fmes<<"  ";
+   miarchivo<<carlos.fmes<<"*";
    int mes_fin;
    mes_fin = atoi(carlos.fmes);
 
@@ -218,7 +218,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.fdia);
-         miarchivo<<carlos.fdia<<"  ";
+         miarchivo<<carlos.fdia<<"*";
    	}
    	else
    	{
@@ -226,7 +226,7 @@ main()
          endl;
       }
       }
-   miarchivo<<carlos.fdia<<"  ";
+   miarchivo<<carlos.fdia<<"*";
    int dia_fin;
    dia_fin = atoi(carlos.fdia);
 
@@ -240,14 +240,14 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.horaf);
-         miarchivo<<carlos.horaf<<"  ";
+         miarchivo<<carlos.horaf<<"*";
    	}
    	else
    	{
    		i=1;
       }
    }
-    miarchivo<<carlos.horaf<<"  ";
+    miarchivo<<carlos.horaf<<"*";
    int hora_fin;
    hora_fin = atoi(carlos.horaf);
 
@@ -262,7 +262,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minuf);
-         miarchivo<<carlos.minuf<<"  ";
+         miarchivo<<carlos.minuf<<"*";
    	}
    	else
    	{
@@ -271,7 +271,7 @@ main()
    }
 
 
-   miarchivo<<carlos.minuf<<"  ";
+   miarchivo<<carlos.minuf<<"*";
    int minu_fin;
    minu_fin = atoi(carlos.minuf);
 
@@ -300,11 +300,19 @@ main()
    cout<<"SIMON";
    }
     char caracter;
- ifstream archivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
+ ifstream archivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
 
     while(!archivo.eof())
 {
+
 archivo.get(caracter);
+if (caracter=='*')
+{
+
+
+}
+
+
 cout<<caracter ;
 }
 archivo.close();
@@ -313,9 +321,6 @@ getch();
 	break;
 
     }
-
-
-
 
    }while(x!=4);
 
