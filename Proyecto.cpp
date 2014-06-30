@@ -315,7 +315,11 @@ main()
 archivo.get(caracter);
 /*if (caracter=='*')
 {
+<<<<<<< HEAD
   while(caracter!=' ')
+=======
+  while(carater!='*')
+>>>>>>> cc8d20a02c269e424f5b47c3dadc61e9070d7402
   {
 
   }
