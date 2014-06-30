@@ -308,7 +308,10 @@ main()
 archivo.get(caracter);
 if (caracter=='*')
 {
+  while(carater!='*')
+  {
 
+  }
 
 }
 
