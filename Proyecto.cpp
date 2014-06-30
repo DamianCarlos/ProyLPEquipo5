@@ -34,7 +34,7 @@ main()
    case 1:
     {
     clrscr();
-    ofstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/USER/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
@@ -306,30 +306,29 @@ main()
    {
    cout<<"SIMON";
    }
-    char caracter;
- ifstream archivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
+    char caracter,var[4];
+    int i=0;
+ ifstream archivo("C:/Users/USER/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
 
     while(!archivo.eof())
 {
 
 archivo.get(caracter);
-/*if (caracter=='*')
+if (caracter=='*')
 {
-<<<<<<< HEAD
-  while(caracter!=' ')
-=======
-  while(carater!='*')
->>>>>>> cc8d20a02c269e424f5b47c3dadc61e9070d7402
-  {
 
-  }
-
-}*/
+    var[i]=caracter;
+     i++;
 
 
-cout<<caracter ;
+}
+
 }
 archivo.close();
+
+ int varx;
+   varx = atoi(var);
+   cout<<varx;
 getch();
    break;
    }
