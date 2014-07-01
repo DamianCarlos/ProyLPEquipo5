@@ -38,7 +38,7 @@ main()
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
-   miarchivo<<"\n"<<carlos.nombre<<" ";
+   miarchivo<<carlos.nombre<<" ";
    i=0;
     while ( i==0)
     {
@@ -272,7 +272,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minuf);
-         miarchivo<<carlos.minuf<<"*";
+         miarchivo<<carlos.minuf<<"/";
    	}
    	else
    	{
@@ -281,7 +281,7 @@ main()
    }
 
 
-   miarchivo<<carlos.minuf<<"*";
+   miarchivo<<carlos.minuf<<"/";
    int minu_fin;
    minu_fin = atoi(carlos.minuf);
 
@@ -306,26 +306,34 @@ main()
    {
    cout<<"SIMON";
    }
-    char caracter,var[4];
+    char caracter,var[20];
     int i=0;
  ifstream archivo("C:/Users/USER/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
 
+
+
+
     while(!archivo.eof())
 {
-
 archivo.get(caracter);
-if (caracter=='*')
-{
+while(caracter!='/')
+ {
+
+while (caracter=='*')
+	{
+    while(caracter!='*')
+    {
 
     var[i]=caracter;
      i++;
-
-
-}
-
+     archivo.get(caracter);
+     }
+     archivo.get(caracter);
+	}
+  archivo.get(caracter);
+ }
 }
 archivo.close();
-
  int varx;
    varx = atoi(var);
    cout<<varx;
