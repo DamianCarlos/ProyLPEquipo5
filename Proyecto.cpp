@@ -13,6 +13,7 @@
 };
 main()
 {
+  char cadena[100];
   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
                   "Jueves","Viernes","Sabado"};
    time_t tSac = time(NULL);
@@ -310,37 +311,30 @@ main()
     int i=0;
  ifstream archivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::in);
 
+ archivo.getline(cadena,100);
+ cout<<cadena;
 
 
 
-    while(!archivo.eof())
-{
-archivo.get(caracter);
-while(caracter!='/')
- {
-
-while (caracter=='*')
+ 	while(!archivo.eof())
 	{
-    for(int j=0;j<=1;j++)
-    {
-    if(caracter!='*')
-    {
-
-    var[i]=caracter;
-     i++;
-     archivo.get(caracter);
-     }
-     else
-     {
-     archivo.get(caracter);
-   j--;
-   }
-   }
-	}
-
-  archivo.get(caracter);
- }
-}
+		archivo.get(caracter);
+		while(caracter!='/')
+		{
+      	while (caracter=='*')
+			{
+         	archivo.get(caracter);
+            while (caracter!='*')
+            {
+            var[i]=caracter;
+		     	i++;
+		     	archivo.get(caracter);
+         	}
+         }
+      	archivo.get(caracter);
+   	}
+		archivo.get(caracter);
+	}   
 archivo.close();
  int varx;
    varx = atoi(var);
