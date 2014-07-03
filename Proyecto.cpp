@@ -1,11 +1,9 @@
-
-
 # include <iostream>
 # include <conio>
 # include <fstream>
 # include <stdio>
 # include <time.h>
-#include <stdlib.h>
+# include <stdlib.h>
 
   struct nuevoevento
 {
@@ -38,7 +36,7 @@ main()
    case 1:
     {
     clrscr();
-    ofstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/BC5/BIN/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
@@ -67,6 +65,7 @@ main()
    gets(carlos.ianio);
    inanio = atoi(carlos.ianio);
    i=0;
+
    while (i==0)
     {
       if (strlen(carlos.ianio)==0)
@@ -276,7 +275,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor   ";
           gets(carlos.minuf);
-         miarchivo<<carlos.minuf<<"/";
+         miarchivo<<carlos.minuf<<"/\n";
    	}
    	else
    	{
@@ -285,7 +284,7 @@ main()
    }
 
 
-   miarchivo<<carlos.minuf<<"/";
+   miarchivo<<carlos.minuf<<"/\n";
    int minu_fin;
    minu_fin = atoi(carlos.minuf);
 
@@ -310,7 +309,13 @@ main()
    {
    cout<<"SIMON";
    }
-    char var[20];
+
+getch();
+   break;
+   }
+   case 2:
+    {
+	   char var[20];
     int i=0;
  ifstream archivo("C:/BC5/BIN/eventos.txt");
  while(!archivo.eof())
@@ -324,7 +329,7 @@ main()
       {
       c++;
       }
-      if(c>2)
+      if(c>0)
       {
       	i++;
          caracter=0;
@@ -336,6 +341,7 @@ main()
          }
          datos[posicion]=atoi(nueva);
          cout<<"datos: "<<datos[posicion]<<endl;
+
          posicion++;
          i++;
       }
@@ -343,30 +349,16 @@ main()
 
  }
 
-archivo.close();
- int varx;
-   varx = atoi(var);
-   cout<<varx;
-getch();
-   break;
-   }
-   case 2:
-    {
-      if (inanio==tmP->tm_year)
-      {
-       	cout<<"si es igual";
-      }
-      else
-      {
-       	cout<<"no es igual";
-      }
+ archivo.close();
 
     break;
     }
 
    }
-   }while(x!=4);
 
+}while(x!=4);
 getch();
+
 }
+
 
