@@ -14,7 +14,7 @@ main()
   char cadena[250];
   char nueva[200];
   int datos[100];
-  int posicion=0,caracter=0,c;
+  int posicion1=1,posicion=0,caracter=0,c;
   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
                   "Jueves","Viernes","Sabado"};
    time_t tSac = time(NULL);
@@ -36,7 +36,7 @@ main()
    case 1:
     {
     clrscr();
-    ofstream miarchivo("C:/BC5/BIN/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
@@ -92,7 +92,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.imes);
-         miarchivo<<carlos.imes;
+         miarchivo<<'%'<<carlos.imes;
    	}
    	else
    	{
@@ -100,7 +100,7 @@ main()
          endl;
       }
     }
-   miarchivo<<carlos.imes<<"*";
+   miarchivo<<'%'<<carlos.imes<<"%";
    int mes_inicio;
    mes_inicio = atoi(carlos.imes);
 
@@ -116,7 +116,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.idia);
-         miarchivo<<carlos.idia<<"*";
+         miarchivo<<'&'<<carlos.idia<<"&";
    	}
    	else
    	{
@@ -124,7 +124,7 @@ main()
          endl;
       }
     }
-   miarchivo<<carlos.idia<<"*";
+   miarchivo<<'&'<<carlos.idia<<"&";
    int dia_inicio;
    dia_inicio = atoi(carlos.idia);
 
@@ -301,27 +301,22 @@ main()
 
 
 
-   cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
-   cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
-   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
 
-   if(((tmP->tm_hour)>=(hora_inicio))&&((tmP->tm_hour)<=(hora_fin)))
-   {
-   cout<<"SIMON";
-   }
+
 
 getch();
    break;
    }
    case 2:
     {
-	   char var[20];
+
     int i=0;
- ifstream archivo("C:/BC5/BIN/eventos.txt");
- while(!archivo.eof())
+    ifstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
+
+ while(!miarchivo.eof())
  {
- 	archivo.getline(cadena,100);
-   cout<<cadena;
+ 	miarchivo.getline(cadena,100);
+   /*cout<<cadena;*/
    c=0;
    for (int i=0;i<strlen(cadena);i++)
    {
@@ -340,7 +335,7 @@ getch();
             i++;
          }
          datos[posicion]=atoi(nueva);
-         cout<<"datos: "<<datos[posicion]<<endl;
+         /*cout<<"datos: "<<datos[posicion]<<endl;*/
 
          posicion++;
          i++;
@@ -349,8 +344,100 @@ getch();
 
  }
 
- archivo.close();
 
+
+ i=0;
+ posicion=1;
+
+ while(!miarchivo.eof())
+ {
+ 	miarchivo.getline(cadena,100);
+   //cout<<cadena;
+   c=0;
+   for (int i=0;i<strlen(cadena);i++)
+   {
+   	if(cadena[i]=='%')
+      {
+      c++;
+      }
+      if(c>0)
+      {
+      	i++;
+         caracter=0;
+         while(cadena[i]!='%'&&cadena[i]!='\0')
+         {
+         	nueva[caracter]=cadena[i];
+            caracter++;
+            i++;
+         }
+         datos[posicion]=atoi(nueva);
+         /*cout<<"datos: "<<datos[posicion]<<endl;*/
+
+         posicion++;
+         i++;
+      }
+   }
+
+ }
+
+
+
+
+ i=0;
+ posicion=2;
+ while(!miarchivo.eof())
+ {
+ 	miarchivo.getline(cadena,100);
+   //cout<<cadena;
+   c=0;
+   for (int i=0;i<strlen(cadena);i++)
+   {
+   	if(cadena[i]=='&')
+      {
+      c++;
+      }
+      if(c>0)
+      {
+      	i++;
+         caracter=0;
+         while(cadena[i]!='&'&&cadena[i]!='\0')
+         {
+         	nueva[caracter]=cadena[i];
+            caracter++;
+            i++;
+         }
+         datos[posicion]=atoi(nueva);
+         /*cout<<"datos: "<<datos[posicion]<<endl;*/
+
+         posicion++;
+         i++;
+      }
+   }
+
+ }
+
+
+ for (int y=0;y<3;y++)
+ {
+  cout<<datos[i]<<endl;
+
+ }
+
+  cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
+   cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
+   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
+
+     if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
+   {
+   cout<<endl<<"Evento para hoy:  "<<endl;
+   cout<<cadena;
+   }
+
+
+
+
+
+    getch();
     break;
     }
 
