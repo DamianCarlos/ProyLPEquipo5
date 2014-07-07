@@ -13,7 +13,10 @@ main()
 {
   char cadena[250];
   char nueva[200];
+  char nueva1[200];
   int datos[100];
+  char nomcad[200];
+  char descad[200];
   int posicion1=1,posicion=0,caracter=0,c;
   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
                   "Jueves","Viernes","Sabado"};
@@ -36,15 +39,14 @@ main()
    case 1:
     {
     clrscr();
-<<<<<<< HEAD
-    ofstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
-=======
+
+
     ofstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
->>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
+
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
-   miarchivo<<carlos.nombre<<" ";
+   miarchivo<<"*"<<carlos.nombre<<"*";
    i=0;
     while ( i==0)
     {
@@ -307,11 +309,9 @@ getch();
     {
 
     int i=0;
-<<<<<<< HEAD
-    ifstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
-=======
+
     ifstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
->>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
+
 
  while(!miarchivo.eof())
  {
@@ -319,13 +319,50 @@ getch();
    /*cout<<cadena;*/
    c=0;
    posicion=0;
-   for (int i=0;i<strlen(cadena);i++)
+   int i;
+   for (i=0;i<strlen(cadena);i++)
    {
    	if(cadena[i]=='*')
       {
       c++;
       }
-      if(c>0)
+       switch(c)
+       {
+       case 1:
+       {
+
+         i++;
+         caracter=0;
+         while(cadena[i]!='*' && cadena[i]!='\0')
+         {
+         	nomcad[caracter]=cadena[i];
+            caracter++;
+            i++;
+         }
+
+         i--;
+
+       break;
+       }
+
+        case 2:
+       {
+
+          i++;
+         caracter=0;
+         while(cadena[i]!='*' && cadena[i]!='\0')
+         {
+         	descad[caracter]=cadena[i];
+            caracter++;
+            i++;
+         }
+         i--;
+
+       break;
+       }
+
+      default:
+
       {
       	i++;
          caracter=0;
@@ -345,36 +382,34 @@ getch();
          {
          	nueva[k] = '\0';
          }
+         break;
       }
+
+     }
    }
-   if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
-   {
-   cout<<endl<<"Evento para hoy:  "<<endl;
-   cout<<cadena;
-   }
+
+
 
  }
+  if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
+   {
+   	cout<<endl<<"Evento para hoy:  "<<endl;
+      cout<<cadena;
+   }
+   cout<<nomcad<<endl<<descad<<endl;
 
-<<<<<<< HEAD
  for (int y=0;y<3;y++)
-=======
 
- for (int y=0;y<=2;y++)
->>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
  {
   cout<<datos[y]<<endl;
 
  }
 
-  cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
+  /*cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
    cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
-   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
+   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl; */
 
-     if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
-   {
-   cout<<endl<<"Evento para hoy:  "<<endl;
-   cout<<cadena;
-   }
+
 
 
 
