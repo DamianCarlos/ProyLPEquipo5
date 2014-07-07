@@ -36,7 +36,11 @@ main()
    case 1:
     {
     clrscr();
+<<<<<<< HEAD
     ofstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+=======
+    ofstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+>>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
@@ -303,7 +307,11 @@ getch();
     {
 
     int i=0;
+<<<<<<< HEAD
     ifstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
+=======
+    ifstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
+>>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
 
  while(!miarchivo.eof())
  {
@@ -347,7 +355,12 @@ getch();
 
  }
 
+<<<<<<< HEAD
  for (int y=0;y<3;y++)
+=======
+
+ for (int y=0;y<=2;y++)
+>>>>>>> 46abd6b915e399f659efc078ecba7499206137aa
  {
   cout<<datos[y]<<endl;
 
