@@ -6,9 +6,9 @@
 # include <stdlib.h>
 
   struct nuevoevento
-{
-   char descripcion[100], nombre[30],ianio[4],imes[2],idia[2],fanio[4],fmes[2],fdia[2],horai[2],minui[2],horaf[2],minuf[2];
-};
+  {
+    	char descripcion[100], nombre[30],ianio[4],imes[2],idia[2],fanio[4],fmes[2],fdia[2],horai[2],minui[2],horaf[2],minuf[2];
+  };
 main()
 {
   char cadena[250];
@@ -17,8 +17,8 @@ main()
   int posicion1=1,posicion=0,caracter=0,c;
   char* dS[7] = {"Domingo","Lunes","Martes","Miercoles",
                   "Jueves","Viernes","Sabado"};
-   time_t tSac = time(NULL);
-   struct tm* tmP = localtime(&tSac);
+  time_t tSac = time(NULL);
+  struct tm* tmP = localtime(&tSac);
   int x,i,inanio,inmes,india,inhora,inmint,infanio,infmes,infdia,inhoraf,inminuf;
 
  do
@@ -36,7 +36,7 @@ main()
    case 1:
     {
     clrscr();
-    ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
    gets(carlos.nombre);
@@ -79,7 +79,7 @@ main()
    		i=1;
       }
     }
-   miarchivo<<carlos.ianio<<"*";
+   miarchivo<<carlos.ianio;
    int anio_inicio;
    anio_inicio = atoi(carlos.ianio);
    cout<<"\t        mes:      ";
@@ -92,7 +92,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.imes);
-         miarchivo<<'%'<<carlos.imes;
+         miarchivo<<'*'<<carlos.imes;
    	}
    	else
    	{
@@ -100,7 +100,7 @@ main()
          endl;
       }
     }
-   miarchivo<<'%'<<carlos.imes<<"%";
+   miarchivo<<'*'<<carlos.imes;
    int mes_inicio;
    mes_inicio = atoi(carlos.imes);
 
@@ -116,7 +116,7 @@ main()
    	{
     		cout<<" Ingrese el dato porfavor		";
          gets(carlos.idia);
-         miarchivo<<'&'<<carlos.idia<<"&";
+         miarchivo<<'*'<<carlos.idia<<"*";
    	}
    	else
    	{
@@ -124,7 +124,7 @@ main()
          endl;
       }
     }
-   miarchivo<<'&'<<carlos.idia<<"&";
+   miarchivo<<'*'<<carlos.idia<<"*";
    int dia_inicio;
    dia_inicio = atoi(carlos.idia);
 
@@ -296,14 +296,6 @@ main()
    cout<<"\t"<<carlos.descripcion<<endl<<endl;
 
 
-
-
-
-
-
-
-
-
 getch();
    break;
    }
@@ -311,13 +303,14 @@ getch();
     {
 
     int i=0;
-    ifstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
+    ifstream miarchivo("C:/Users/Andres_Rock Music/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
 
  while(!miarchivo.eof())
  {
  	miarchivo.getline(cadena,100);
    /*cout<<cadena;*/
    c=0;
+   posicion=0;
    for (int i=0;i<strlen(cadena);i++)
    {
    	if(cadena[i]=='*')
@@ -328,7 +321,7 @@ getch();
       {
       	i++;
          caracter=0;
-         while(cadena[i]!='*'&&cadena[i]!='\0')
+         while(cadena[i]!='*' && cadena[i]!='\0')
          {
          	nueva[caracter]=cadena[i];
             caracter++;
@@ -338,88 +331,25 @@ getch();
          /*cout<<"datos: "<<datos[posicion]<<endl;*/
 
          posicion++;
-         i++;
+         i--;
+         int dim = strlen(nueva);
+         for(int k = 0; k < dim; k++)
+         {
+         	nueva[k] = '\0';
+         }
       }
    }
-
- }
-
-
-
- i=0;
- posicion=1;
-
- while(!miarchivo.eof())
- {
- 	miarchivo.getline(cadena,100);
-   //cout<<cadena;
-   c=0;
-   for (int i=0;i<strlen(cadena);i++)
+   if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
    {
-   	if(cadena[i]=='%')
-      {
-      c++;
-      }
-      if(c>0)
-      {
-      	i++;
-         caracter=0;
-         while(cadena[i]!='%'&&cadena[i]!='\0')
-         {
-         	nueva[caracter]=cadena[i];
-            caracter++;
-            i++;
-         }
-         datos[posicion]=atoi(nueva);
-         /*cout<<"datos: "<<datos[posicion]<<endl;*/
-
-         posicion++;
-         i++;
-      }
+   cout<<endl<<"Evento para hoy:  "<<endl;
+   cout<<cadena;
    }
 
  }
-
-
-
-
- i=0;
- posicion=2;
- while(!miarchivo.eof())
- {
- 	miarchivo.getline(cadena,100);
-   //cout<<cadena;
-   c=0;
-   for (int i=0;i<strlen(cadena);i++)
-   {
-   	if(cadena[i]=='&')
-      {
-      c++;
-      }
-      if(c>0)
-      {
-      	i++;
-         caracter=0;
-         while(cadena[i]!='&'&&cadena[i]!='\0')
-         {
-         	nueva[caracter]=cadena[i];
-            caracter++;
-            i++;
-         }
-         datos[posicion]=atoi(nueva);
-         /*cout<<"datos: "<<datos[posicion]<<endl;*/
-
-         posicion++;
-         i++;
-      }
-   }
-
- }
-
 
  for (int y=0;y<3;y++)
  {
-  cout<<datos[i]<<endl;
+  cout<<datos[y]<<endl;
 
  }
 
