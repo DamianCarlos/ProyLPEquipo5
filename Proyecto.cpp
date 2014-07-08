@@ -41,7 +41,7 @@ main()
     clrscr();
 
 
-    ofstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
+    ofstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt",ios::app);
 
     nuevoevento carlos;
    cout<<"\n\n		NOMBRE PARA EL EVENTO:     ";
@@ -310,7 +310,7 @@ getch();
 
     int i=0;
 
-    ifstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
+    ifstream miarchivo("C:/Users/Core 2 Duo/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
 
 
  while(!miarchivo.eof())
@@ -396,14 +396,16 @@ getch();
    	cout<<endl<<"Evento para hoy:  "<<endl;
       cout<<cadena;
    }
-   cout<<nomcad<<endl<<descad<<endl;
+   
 
- for (int y=0;y<3;y++)
 
- {
-  cout<<datos[y]<<endl;
+   cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
 
- }
+
+
+
 
   /*cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
    cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;
