@@ -68,7 +68,7 @@ main()
  	miarchivo<<carlos.descripcion<<"*";
 
 
-   cout<<"\n		FECHA DE INICIO: \n\n\t        anio:     ";
+   cout<<"\n		FECHA DE INICIO: \n\n\t\t        anio:     ";
    gets(carlos.ianio);
    inanio = atoi(carlos.ianio);
    i=0;
@@ -89,7 +89,7 @@ main()
    miarchivo<<carlos.ianio;
    int anio_inicio;
    anio_inicio = atoi(carlos.ianio);
-   cout<<"\t        mes:      ";
+   cout<<"\t\t        mes:      ";
    gets(carlos.imes);
    inmes = atoi(carlos.imes);
       i=0;
@@ -113,7 +113,7 @@ main()
 
 
 
-   cout<<"\t\tdia:      ";
+   cout<<"\t\t\tdia:      ";
    gets(carlos.idia);
    india = atoi(carlos.idia);
    i=0;
@@ -136,7 +136,7 @@ main()
    dia_inicio = atoi(carlos.idia);
 
 
-   cout<<"\n		HORA DE INICIO:  \n\n\t\tHORA:       ";
+   cout<<"\n		HORA DE INICIO:  \n\n\t\t\tHORA:       ";
    gets(carlos.horai);
    inhora = atoi(carlos.horai);
    i=0;
@@ -159,7 +159,7 @@ main()
 
 
 
-   cout<<"\t\tMINUTOS:    ";
+   cout<<"\t\t\tMINUTOS:    ";
    gets(carlos.minui);
    inmint = atoi(carlos.minui);
    i=0;
@@ -182,7 +182,7 @@ main()
    int minu_inicio;
    minu_inicio = atoi(carlos.minui);
 
-   cout<<"\n		FECHA DE FIN: \n\n\t\tanio:       ";
+   cout<<"\n		FECHA DE FIN: \n\n\t\t\tanio:       ";
    gets(carlos.fanio);
    infanio=atoi(carlos.fanio);
    i=0;
@@ -202,7 +202,7 @@ main()
    miarchivo<<carlos.fanio<<"*";
    int anio_fin;
    anio_fin = atoi(carlos.fanio);
-   cout<<"\t\tmes:        ";
+   cout<<"\t\t\tmes:        ";
    gets(carlos.fmes);
    infmes = atoi(carlos.fmes);
       i=0;
@@ -226,7 +226,7 @@ main()
 
 
 
-   cout<<"\t  dia:        ";
+   cout<<"\t\t\tdia:        ";
    gets(carlos.fdia);
    infdia = atoi(carlos.fdia);
    i=0;
@@ -249,7 +249,7 @@ main()
    dia_fin = atoi(carlos.fdia);
 
 
-   cout<<"\n		HORA DE FIN:  \n\tHORA:          ";
+   cout<<"\n		HORA DE FIN:  \n\t\t\tHORA:          ";
    gets(carlos.horaf);
    inhoraf = atoi(carlos.horaf);
    i=0;
@@ -272,7 +272,7 @@ main()
 
 
 
-   cout<<"\t MINUTOS:       ";
+   cout<<"\t\t\tMINUTOS:       ";
    gets(carlos.minuf);
    inminuf = atoi(carlos.minuf);
    i=0;
@@ -309,13 +309,14 @@ getch();
    case 2:
     {
 
-    int i=0;
+    int i=0,q=1;
 
     ifstream miarchivo("C:/Users/SHAW_/Documents/GitHub/ProyLPEquipo5/eventos/eventos.txt");
 
 
  while(!miarchivo.eof())
  {
+ q=1;
  	miarchivo.getline(cadena,100);
    /*cout<<cadena;*/
    c=0;
@@ -387,8 +388,13 @@ getch();
       }
 
      }
+<<<<<<< HEAD
       }
 
+=======
+           if (q==12)
+       {
+>>>>>>> 199c48ca5d2d58623c193dbb69a34c357f22513d
         if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
    {
    	cout<<endl<<"Evento para hoy:  "<<endl;
@@ -397,8 +403,14 @@ getch();
    cout<<"\t"<<descad<<endl<<endl;
 
    }
+<<<<<<< HEAD
 
 
+=======
+   }
+   q++;
+   }
+>>>>>>> 199c48ca5d2d58623c193dbb69a34c357f22513d
 
 
 
