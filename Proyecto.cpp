@@ -388,13 +388,10 @@ getch();
       }
 
      }
-<<<<<<< HEAD
-      }
 
-=======
            if (q==12)
        {
->>>>>>> 199c48ca5d2d58623c193dbb69a34c357f22513d
+
         if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
    {
    	cout<<endl<<"Evento para hoy:  "<<endl;
@@ -403,14 +400,11 @@ getch();
    cout<<"\t"<<descad<<endl<<endl;
 
    }
-<<<<<<< HEAD
 
-
-=======
    }
    q++;
    }
->>>>>>> 199c48ca5d2d58623c193dbb69a34c357f22513d
+
 
 
 
@@ -439,7 +433,7 @@ getch();
  while(!miarchivo.eof())
  {
  	miarchivo.getline(cadena,100);
-   /*cout<<cadena;*/
+
    c=0;
    posicion=0;
    int i;
@@ -511,15 +505,94 @@ getch();
      }
       }
 
-        if(((tmP->tm_year+1900)>=(datos[0]))&&((tmP->tm_mon+1)<=(datos[1]))&&((tmP->tm_mday)==(datos[2])))
-   {
-   	cout<<endl<<"Evento para hoy:  "<<endl;
-        cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+
+    if(dS[tmP->tm_wday]==dS[1])
+     {
+     for(int k=1;k<=7;k++)
+     		{
+          tmP->tm_mday=tmP->tm_mday+k;
+
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
    cout<<"\t"<<nomcad<<endl;
    cout<<"\t"<<descad<<endl<<endl;
+     		}
+     }
+     else
+     {
+      if(dS[tmP->tm_wday]==dS[2])
+     {
+     for(int k=1;k<=7;k++)
+     		{
+          tmP->tm_mday=(tmP->tm_mday-1)+k;
 
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
    }
+     }
+     else
+     {
+       if(dS[tmP->tm_wday]==dS[3])
+     		{
+     for(int k=1;k<=7;k++)
+     			{
+          tmP->tm_mday=(tmP->tm_mday-2)+k;
 
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
+   			}
+    		 }
+          else
+          {
+          if(dS[tmP->tm_wday]==dS[4])
+     		{
+     for(int k=1;k<=7;k++)
+     			{
+          tmP->tm_mday=(tmP->tm_mday-3)+k;
+
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
+   			}
+    		 }
+          else
+          {
+          if(dS[tmP->tm_wday]==dS[5])
+     		{
+     for(int k=1;k<=7;k++)
+     			{
+          tmP->tm_mday=(tmP->tm_mday-4)+k;
+
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
+   			}
+    		 }
+          else
+          {
+          if(dS[tmP->tm_wday]==dS[6])
+     		{
+     for(int k=1;k<=7;k++)
+     			{
+          tmP->tm_mday=(tmP->tm_mday-5)+k;
+
+      cout<<endl<<"Eventos para la semana:  "<<endl;
+  cout<<"\n\n\t Desde\t"<<datos[0]<<"/"<<datos[1]<<"/"<<datos[2]<<"   "<<datos[3]<<":"<<datos[4]<<"\t Hasta\t"<<datos[5]<<"/"<<datos[6]<<"/"<<datos[7]<<"   "<<datos[8]<<":"<<datos[9]<<endl;
+   cout<<"\t"<<nomcad<<endl;
+   cout<<"\t"<<descad<<endl<<endl;
+   			}
+    		 }
+          }
+          }
+          }
+
+     }
 
 
   }
@@ -528,7 +601,7 @@ getch();
 
   /*cout<< "hh:mm:ss " << tmP->tm_hour << ":" << tmP->tm_min << ":"<< tmP->tm_sec << endl;
    cout<< "dd-mm-aaaa: " <<(tmP->tm_mday)<<"-"<<(tmP->tm_mon+1)<<"-"<<(tmP->tm_year+1900)<<endl;*/
-   cout<< "Dia de semana: " << dS[tmP->tm_wday] << endl;
+
   }
 
 
@@ -540,7 +613,7 @@ getch();
     break;
     }
 
-
+    }
 
 
 }while(x!=4);
